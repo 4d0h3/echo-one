@@ -1,0 +1,54 @@
+@import "leaflet/dist/leaflet.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* donner une vraie hauteur à l'appli & à la carte */
+html, body, #root { height: 100%; margin: 0; }
+
+/* la carte prend tout l'écran */
+.leaflet-container { height: 100vh; width: 100vw; }
+
+/* animation du bandeau */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.03); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.03)} 100%{transform:scale(1)} }
+
+
+@keyframes radar-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.pulse-circle {
+  animation: radar-pulse 2s infinite;
+}
+
+
+.badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.badge-sos    { background:#dc2626; }  /* rouge */
+.badge-fire   { background:#f97316; }  /* orange */
+.badge-tech   { background:#16a34a; }  /* vert */
+.badge-test   { background:#2563eb; }  /* bleu */
+.badge-other  { background:#6b7280; }  /* gris */
+
+/* Option : liseré du popup selon le type */
+.leaflet-popup-content-wrapper.popup-sos    { border-left:4px solid #dc2626; }
+.leaflet-popup-content-wrapper.popup-fire   { border-left:4px solid #f97316; }
+.leaflet-popup-content-wrapper.popup-tech   { border-left:4px solid #16a34a; }
+.leaflet-popup-content-wrapper.popup-test   { border-left:4px solid #2563eb; }
+.leaflet-popup-content-wrapper.popup-other  { border-left:4px solid #6b7280; }

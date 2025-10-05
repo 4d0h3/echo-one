@@ -1,0 +1,81 @@
+
+> leo-backend@1.0.0 dev
+> node src/server.js
+
+[dotenv@17.2.3] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[MongoDB] Connected: mongodb://localhost:27017/leo
+🚀 Server running on http://localhost:3000
+[MQTT] Connected to mqtt://localhost:1883
+[MQTT] Subscribed to topic: hackathon/sos
+🛰️ WS client connected: 5Kv3klEJq-laGwHeAAAC
+[MQTT] Alert saved: {
+  type: 'SOS',
+  lat: 48.8566,
+  lng: 2.3522,
+  intensity: 5,
+  ts: '2025-10-05T14:18:36.648Z'
+}
+[MQTT] Alert saved: {
+  type: 'FIRE',
+  lat: 45.764,
+  lng: 4.8357,
+  intensity: 4,
+  ts: '2025-10-05T14:18:37.651Z'
+}
+[MQTT] Alert saved: {
+  type: 'DEBRIS',
+  lat: 36.7538,
+  lng: 3.0588,
+  intensity: 5,
+  ts: '2025-10-05T14:18:38.658Z'
+}
+[MQTT] Alert saved: {
+  type: 'TECH',
+  lat: 43.6045,
+  lng: 1.4442,
+  intensity: 2,
+  ts: '2025-10-05T14:18:39.667Z'
+}
+[MQTT] Alert saved: {
+  type: 'LOW_POWER',
+  lat: 43.2965,
+  lng: 5.3698,
+  intensity: 2,
+  ts: '2025-10-05T14:18:40.672Z'
+}
+[MQTT] Alert saved: {
+  type: 'MEDICAL',
+  lat: 34.0207,
+  lng: -6.8416,
+  intensity: 4,
+  ts: '2025-10-05T14:18:41.683Z'
+}
+[MQTT] Alert saved: {
+  type: 'RADIATION',
+  lat: 40.7128,
+  lng: -74.006,
+  intensity: 4,
+  ts: '2025-10-05T14:18:42.700Z'
+}
+[MQTT] Alert saved: {
+  type: 'SYSTEM_ALERT',
+  lat: 51.5074,
+  lng: -0.1278,
+  intensity: 1,
+  ts: '2025-10-05T14:18:43.709Z'
+}
+[MQTT] Alert saved: {
+  type: 'TEST',
+  lat: 41.9028,
+  lng: 12.4964,
+  intensity: 1,
+  ts: '2025-10-05T14:18:44.715Z'
+}
+[MQTT] Alert saved: {
+  type: 'OTHER',
+  lat: 52.52,
+  lng: 13.405,
+  intensity: 1,
+  ts: '2025-10-05T14:18:45.729Z'
+}
+🛰️ WS client disconnected: 5Kv3klEJq-laGwHeAAAC
