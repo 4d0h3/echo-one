@@ -47,5 +47,5 @@ Frontend Dashboard (React + Leaflet Heatmap)
 https://isela-nonenigmatic-briana.ngrok-free.dev
 
 👥 Team :
-4d0h3 and Mission Impro
+4d0h3, Mission Impro and ChatGPT
 NASA Space Apps Challenge 2025 — Paris 
