@@ -1,0 +1,9 @@
+# leo-backend/.env.example
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/leo
+MQTT_BROKER=mqtt://localhost:1883
+MQTT_TOPIC=hackathon/sos
+ALLOW_ORIGIN=http://localhost:5173,https://isela-nonenigmatic-briana.ngrok-free.dev
+
+# leo-frontend/.env.example
+VITE_API_URL=http://localhost:3000
