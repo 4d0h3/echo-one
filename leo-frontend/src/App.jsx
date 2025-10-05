@@ -7,6 +7,7 @@ import {
   Popup,
   useMap,
   Circle,
+  WMSTileLayer
 } from "react-leaflet";
 import L from "leaflet";
 import "leaflet.heat";
@@ -59,6 +60,22 @@ function getIcon(tRaw) {
     });
   }
   return iconCache[icon];
+}
+
+function NasaEonetCount() {
+  const [n, setN] = useState(null);
+  useEffect(() => {
+    fetch("https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=1")
+      .then(r=>r.json()).then(d=>setN(d?.title ? 0 : (d?.events?.length ?? 0))).catch(()=>{});
+  }, []);
+  if (n === null) return null;
+  return (
+    <div style={{position:"absolute", left:12, bottom:12, zIndex:1100,
+                 padding:"6px 10px", background:"rgba(17,17,23,.75)",
+                 border:"1px solid rgba(255,255,255,.12)", borderRadius:10, color:"#fff"}}>
+      NASA EONET — Open events: <b>{n}</b>
+    </div>
+  );
 }
 
 // Icône par défaut Leaflet (fallback)
@@ -331,7 +348,7 @@ export default function App() {
       }}
     >
       <style>{radarCSS}</style>
-
+      <NasaEonetCount />
       <HUD
         apiUrl={API_URL}
         total={alerts.length}
@@ -495,6 +512,7 @@ export default function App() {
           🚨 SOS reçu ! Nouveau signal détecté
         </div>
       )}
+      
 
       <MapContainer
         center={last ? [last.lat, last.lng] : fallbackCenter}
@@ -502,10 +520,13 @@ export default function App() {
         style={{ height: "100vh", width: "100vw" }}
         whenCreated={(m) => setTimeout(() => m.invalidateSize(), 0)}
       >
+        
         <TileLayer
           attribution='&copy; <a href="https://carto.com/">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         />
+
+          
 
         <AutoCenter last={last} />
         <PanTo target={panTarget} zoom={7} />

@@ -6,8 +6,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import mqtt from "mqtt";
-
 dotenv.config();
+
 
 /* ========= ENV ========= */
 const PORT = Number(process.env.PORT || 3000);
